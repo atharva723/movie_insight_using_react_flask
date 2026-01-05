@@ -333,7 +333,11 @@ GET /api/recommend?movie_id={tmdb_id}
 The application is fully containerized and available as Docker images for easy deployment.
 
 ---
-**Docker Hub Repository:** [atharva723/cineplex](https://hub.docker.com/u/atharva723)
+## 🐳 Docker Hub
+
+- 🔧 **Backend Image**: [atharvar24/movieinsight-backend](https://hub.docker.com/r/atharvar24/movieinsight-backend)
+- 🎨 **Frontend Image**: [atharvar24/movieinsight-frontend](https://hub.docker.com/r/atharvar24/movieinsight-frontend)
+
 ---
 
 ### Backend Issues
