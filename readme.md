@@ -328,6 +328,55 @@ GET /api/recommend?movie_id={tmdb_id}
 - [ ] Analytics dashboard
 
 ---
+# 🐳 Docker Deployment
+
+The application is fully containerized and available as Docker images for easy deployment.
+
+---
+**Docker Hub Repository:** [atharva723/cineplex](https://hub.docker.com/u/atharva723)
+---
+
+### Backend Issues
+
+**Model download timeout:**
+```bash
+# Pre-download model in Dockerfile
+RUN python -c "from sentence_transformers import SentenceTransformer; SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')"
+```
+
+**Port already in use:**
+```bash
+# Use different port
+docker run -p 5001:5000 atharva723/cineplex-backend:latest
+```
+
+### Frontend Issues
+
+**API connection refused:**
+- Update backend URL in frontend build
+- Check if both containers are on same network
+- Verify backend is running
+
+**Video not playing:**
+```bash
+# Mount videos directory
+docker run -v /path/to/videos:/usr/share/nginx/html/videos atharva723/cineplex-frontend:latest
+```
+
+---
+
+## 📈 Performance Optimization
+
+### Multi-stage Builds
+
+Both Dockerfiles use multi-stage builds to reduce image size:
+
+- **Backend:** ~800MB (includes AI model)
+- **Frontend:** ~25MB (optimized nginx + built assets)
+
+
+
+
 
 ## 🐛 Troubleshooting
 
@@ -408,10 +457,12 @@ Full-Stack Developer & AI Enthusiast
 ![Landing Page](screenshots/landing.png)
 
 ### Movie Details
-![Movie Details](screenshots/details.png)
+![Movie Details](screenshots/moviedetail0.png)
+![Movie Details](screenshots/moviedetail1.png)
+![Movie Details](screenshots/moviedetail3.png)
 
 ### Recommendations
-![Recommendations](screenshots/recommendations.png)
+![Recommendations](screenshots/recommendation.png)
 
 ---
 
