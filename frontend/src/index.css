@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+/* ============================= */
+/* Global Font Configuration */
+/* ============================= */
+
+:root {
+  --font-heading: 'Bebas Neue', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+/* Body text */
+body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.6;
+  background-color: #000;
+  color: #fff;
+}
+
+
+:root {
+  --color-primary: hsl(0, 100%, 50%);
+  --color-primary-foreground: hsl(0, 0%, 100%);
+  --color-secondary: hsl(222, 46%, 42%);
+  --color-secondary-foreground: hsl(0, 0%, 100%);
+  --color-success: hsl(120, 100%, 50%);
+  --color-success-foreground: hsl(0, 0%, 0%);
+  --color-warning: hsl(40, 100%, 50%);
+  --color-warning-foreground: hsl(0, 0%, 0%);
+  --color-error: hsl(0, 100%, 50%);
+  --color-error-foreground: hsl(0, 0%, 100%);
+  --color-info: hsl(222, 46%, 42%);
+  --color-info-foreground: hsl(0, 0%, 100%);
+  --color-background: hsl(200, 2%, 24%);
+  --color-surface: rgba(23, 25, 27, 0.9);
+  --color-foreground: hsl(0, 0%, 100%);
+  --color-muted: hsl(0, 0%, 80%);
+  --color-muted-foreground: hsl(0, 0%, 100%);
+  --color-border: hsl(200, 2%, 24%);
+  --color-input: hsl(200, 2%, 24%);
+  --color-ring: hsl(222, 46%, 52%);
+  
+  --font-family-primary: 'Lato', sans-serif;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: var(--font-family-primary);
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  }
+  #logozz{
+      text-transform: none;
+
+
+  };
+
+}
